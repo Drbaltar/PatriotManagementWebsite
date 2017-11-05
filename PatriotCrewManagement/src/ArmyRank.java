@@ -91,7 +91,8 @@ public enum ArmyRank implements Comparable<ArmyRank> {
 	
 	// Returns true if passed in rank is a valid rank for promotion
 	public static boolean isPromotionPossible(ArmyRank rank) {
-		if (rank == ArmyRank.CSM || rank == ArmyRank.CW5 || rank == ArmyRank.GEN) {
+		if (rank == ArmyRank.SGM || rank == ArmyRank.CSM
+				|| rank == ArmyRank.CW5 || rank == ArmyRank.GEN) {
 			return false;
 		} else {
 			return true;
@@ -100,6 +101,11 @@ public enum ArmyRank implements Comparable<ArmyRank> {
 	
 	// Returns true if current rank is a valid rank for promotion
 	public boolean isPromotionPossible() {
-		return isPromotionPossible(ranksShort.get(rankShort));
+		if (this == ArmyRank.SGM || this == ArmyRank.CSM
+				|| this == ArmyRank.CW5 || this == ArmyRank.GEN) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 }
