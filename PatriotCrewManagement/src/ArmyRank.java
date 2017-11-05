@@ -88,4 +88,18 @@ public enum ArmyRank implements Comparable<ArmyRank> {
 	public static ArmyRank getRank(String rank) {
 		return ranksShort.get(rank);
 	}
+	
+	// Returns true if passed in rank is a valid rank for promotion
+	public static boolean isPromotionPossible(ArmyRank rank) {
+		if (rank == ArmyRank.CSM || rank == ArmyRank.CW5 || rank == ArmyRank.GEN) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	// Returns true if current rank is a valid rank for promotion
+	public boolean isPromotionPossible() {
+		return isPromotionPossible(ranksShort.get(rankShort));
+	}
 }
