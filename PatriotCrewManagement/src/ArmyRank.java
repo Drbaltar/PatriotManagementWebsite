@@ -108,4 +108,22 @@ public enum ArmyRank implements Comparable<ArmyRank> {
 			return true;
 		}
 	}
+	
+	// Returns true if passed in rank is a valid rank for demotion
+	public static boolean isDemotionPossible(ArmyRank rank) {
+		if (rank == ArmyRank.PVT || rank == ArmyRank.WO1 ||  rank == ArmyRank._2LT) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	// Returns true if current rank is a valid rank for demotion
+	public boolean isDemotionPossible() {
+		if (this == ArmyRank.PVT || this == ArmyRank.WO1 ||  this == ArmyRank._2LT) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 }
