@@ -109,4 +109,24 @@ public class Soldier {
 			return true;
 		}
 	}
+	
+	// Increases the rank of the Soldier by one rank
+	public boolean promote() {
+		if (this.rank.isPromotionPossible()) {
+			this.rank = ArmyRank.values()[this.rank.ordinal() + 1];
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	// Decreases the rank of the Soldier by one rank
+	public boolean demote() {
+		if (this.rank.isDemotionPossible()) {
+			this.rank = ArmyRank.values()[this.rank.ordinal() - 1];
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
