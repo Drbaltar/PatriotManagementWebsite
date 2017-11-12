@@ -87,7 +87,7 @@ public class Soldier {
 	}
 	
 	// Set method for Soldier's MOS
-	public void setMos(String mos) {
+	public void setMOS(String mos) {
 		this.mos = mos;
 	}
 
