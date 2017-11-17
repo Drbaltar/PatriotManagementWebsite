@@ -43,7 +43,7 @@ public abstract class ArmyCrew {
 	// Get method for individual crew members on the crew
 	public CrewMember getCrewMember(int crewPosition) {
 		if (crewPosition > 0 && crewPosition <= crewMembers.length) {
-			return crewMembers[crewPosition];
+			return crewMembers[crewPosition - 1];
 		} else {
 			return null;
 		}
