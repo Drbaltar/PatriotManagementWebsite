@@ -11,20 +11,27 @@ import java.time.LocalDate;
 
 public abstract class ArmyCrew {
 	
-	// Class members
+	// Class members 
 	private CrewMember[] crewMembers;
+	private String[] crewMemberTitles;
 	private LocalDate breakDate;
 	private boolean isFull;
 	
 	// Constructor
-	public ArmyCrew(CrewMember[] crewMembers) {
+	public ArmyCrew(CrewMember[] crewMembers, String[] crewMemberTitles) {
 		this.crewMembers = crewMembers;
+		this.crewMemberTitles = crewMemberTitles;
 		this.isFull = false;
 	}
 	
-	// Inserts a crew member into the crew and returns true if successful
-	public boolean insertCrewMember(CrewMember crewMember, int crewPosition) {
+	// Adds a crew member to the crew and returns true if successfully added
+	public boolean addCrewMember(Soldier soldier, int crewPosition) {
 		if (crewPosition > 0 && crewPosition <= crewMembers.length) {
+			// Create a new CrewMember object
+			CrewMember crewMember = new CrewMember(soldier, 
+					crewMemberTitles[crewPosition - 1], crewPosition);
+			
+			// Insert new CrewMember into the crew array
 			crewMembers[crewPosition - 1] = crewMember;
 			checkCrewFull();
 			return true;
