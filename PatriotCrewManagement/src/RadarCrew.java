@@ -8,9 +8,11 @@
 
 public class RadarCrew extends ArmyCrew {
 
+	// List of Crew Member titles
 	private static final String[] TITLES = 
-		{"Crewmember 1", "Crewmember 2", "Crewmember 3", "Crewmember 4"};
+		{"Crew Member 1", "Crew Member 2", "Crew Member 3", "Crew Member 4"};
 	
+	// Constructor
 	public RadarCrew() {
 		super("Radar", new CrewMember[4], TITLES);
 	}

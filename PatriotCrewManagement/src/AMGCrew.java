@@ -8,9 +8,11 @@
 
 public class AMGCrew extends ArmyCrew {
 	
+	// List of Crew Member titles
 	private static final String[] TITLES = 
-		{"Crewmember 1", "Crewmember 2", "Crewmember 3"};
+		{"Crew Member 1", "Crew Member 2", "Crew Member 3"};
 	
+	// Constructor
 	public AMGCrew() {
 		super("AMG", new CrewMember[3], TITLES);
 	}
