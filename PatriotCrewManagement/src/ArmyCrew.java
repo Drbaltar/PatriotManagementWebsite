@@ -11,14 +11,16 @@ import java.time.LocalDate;
 
 public abstract class ArmyCrew {
 	
-	// Class members 
+	// Class members
+	private String crewType;
 	private CrewMember[] crewMembers;
 	private String[] crewMemberTitles;
 	private LocalDate breakDate;
 	private boolean isFull;
 	
 	// Constructor
-	public ArmyCrew(CrewMember[] crewMembers, String[] crewMemberTitles) {
+	public ArmyCrew(String crewType, CrewMember[] crewMembers, String[] crewMemberTitles) {
+		this.crewType = crewType;
 		this.crewMembers = crewMembers;
 		this.crewMemberTitles = crewMemberTitles;
 		this.isFull = false;
@@ -38,6 +40,11 @@ public abstract class ArmyCrew {
 		} else {
 			return false;
 		}
+	}
+	
+	// Get method for the type of crew the object represents
+	public String getCrewType() {
+		return crewType;
 	}
 
 	// Get method for individual crew members on the crew

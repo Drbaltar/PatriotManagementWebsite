@@ -12,6 +12,6 @@ public class AMGCrew extends ArmyCrew {
 		{"Crewmember 1", "Crewmember 2", "Crewmember 3"};
 	
 	public AMGCrew() {
-		super(new CrewMember[3], TITLES);
+		super("AMG", new CrewMember[3], TITLES);
 	}
 }
