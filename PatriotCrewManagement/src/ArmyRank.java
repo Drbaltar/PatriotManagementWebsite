@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Map;
 
 /*
  * License: There is no applicable license
@@ -51,7 +50,7 @@ public enum ArmyRank implements Comparable<ArmyRank> {
 	private String grade;			// Pay grade of rank
 	
 	// Static HashMap with all the enum values and short-hand version of rank
-	private static Map<String, ArmyRank> ranksShort;
+	private static HashMap<String, ArmyRank> ranksShort;
 	
 	// Static block used to initialize the HashMap used for rank lookup
 	static {
