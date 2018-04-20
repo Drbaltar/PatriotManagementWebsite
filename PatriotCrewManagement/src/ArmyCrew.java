@@ -36,6 +36,7 @@ public abstract class ArmyCrew {
 			// Insert new CrewMember into the crew array
 			crewMembers[crewPosition - 1] = crewMember;
 			checkCrewFull();
+			setBreakDate();
 			return true;
 		} else {
 			return false;
@@ -56,14 +57,9 @@ public abstract class ArmyCrew {
 		}
 	}
 
-	// Get method for the crew member's break date
+	// Get method for the crew's break date
 	public LocalDate getBreakDate() {
 		return breakDate;
-	}
-
-	// Set method for the crew member's break date
-	public void setBreakDate(LocalDate breakDate) {
-		this.breakDate = breakDate;
 	}
 
 	// Returns true if the crew is full
@@ -83,4 +79,29 @@ public abstract class ArmyCrew {
 		// Change isFull to true is no empty crew positions are found
 		isFull = true;
 	}
+	
+	/*
+	// Helper method that sets the break date for the crew if full
+	private void setBreakDate() {
+		// Do not perform any further operations if crew isn't full
+		if (!isFull) {
+			return;
+		}
+		
+		// Create new date to represent earliest loss date of crew members
+		LocalDate earliestDate;
+		
+		// Iterate through crewmembers and find earliest loss date
+		for (CrewMember crewMember : crewMembers) {
+			LocalDate testDate = crewMember.getSoldier().getLossDate();
+			
+			// Assign crew member loss date as earliest if no date is already assigned
+			if (testDate != null && earliestDate == null) {
+				earliestDate = testDate;
+			} else if (testDate != null && testDate.isBefore(earliestDate)) {
+				earliestDate = testDate 
+			}
+		}
+	}
+	*/
 }
